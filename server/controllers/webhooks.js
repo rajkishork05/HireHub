@@ -18,9 +18,9 @@ export const clerkWebhooks = async(req, res) => {
 
         //getting data request body
         const {data, type} = req.body
-
+ 
         switch (type) {
-            case 'user-created':{
+            case 'user.created':{
                 const userData = {
                     _id : data.id,
                     email: data.email_addresses[0].email_address,
@@ -33,7 +33,7 @@ export const clerkWebhooks = async(req, res) => {
                 break
                 
         }
-            case 'user-updated':{
+            case 'user.updated':{
 
                  const userData = {
                     
@@ -47,7 +47,7 @@ export const clerkWebhooks = async(req, res) => {
                 break
                 
         }
-            case 'user-deleted':{
+            case 'user.deleted':{
                 await User.findByIdAndDelete(data.id)
                 res.json({})
                 break
@@ -56,8 +56,8 @@ export const clerkWebhooks = async(req, res) => {
             break;
     }
 
-    } catch (error) {
+    } catch (error){
         console.log(error.message)
         res.json({success: false, message: "webhook error"})
+        }
     }
-}
