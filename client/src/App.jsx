@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import ApplyJobs from './pages/Applyjobs'
+import ApplyJobs from './pages/ApplyJobs'
 import Applications from './pages/Applications'
 import { AppContext } from './context/AppContext'
 import RecruiterLogin from './components/RecruiterLogin'
@@ -10,7 +10,7 @@ import AddJobs from './pages/AddJobs'
 import ManageJob from './pages/ManageJob'
 import ViewApplication from './pages/ViewApplication'
 import "quill/dist/quill.snow.css"
-  import { ToastContainer, toast } from 'react-toastify';
+  import { ToastContainer } from 'react-toastify';
 const App = () => {
 
 const {showRecruiterLogin, companyToken} = useContext(AppContext)
